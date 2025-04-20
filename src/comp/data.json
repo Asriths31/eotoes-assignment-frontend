@@ -1,0 +1,40 @@
+
+
+
+    
+ [ {
+  "id": "snk01",
+  "name": "Nachos",
+  "description": "Crispy tortilla chips topped with cheese, jalapenos, and salsa.",
+  "price": "₹498",
+  "image": "https://images.unsplash.com/photo-1604908177301-f51b0f1d37cb"
+},
+{
+  "id": "snk02",
+  "name": "Fries",
+  "description": "Golden French fries lightly seasoned and served with ketchup.",
+  "price": "₹331",
+  "image": "https://images.unsplash.com/photo-1550547660-d9450f859349"
+},
+{
+  "id": "snk03",
+  "name": "Popcorn",
+  "description": "Buttery popcorn perfect for movie nights.",
+  "price": "₹208",
+  "image": "https://images.unsplash.com/photo-1584270354949-1bc9e2dca2b2"
+},
+{
+  "id": "snk04",
+  "name": "Pretzels",
+  "description": "Soft pretzels sprinkled with salt and served with mustard.",
+  "price": "₹291",
+  "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38"
+},
+{
+  "id": "snk05",
+  "name": "Chicken Nuggets",
+  "description": "Bite-sized breaded chicken served with honey mustard.",
+  "price": "₹435",
+  "image": "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f"
+}
+ ]
