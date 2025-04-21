@@ -7,10 +7,24 @@ export const MyContext=React.createContext()
 
 function App() {
      const[cart,setCart]=React.useState([])
+     const [quantities, setQuantities] = React.useState({});
+     function increase(id){
+      setQuantities(prev => ({
+        ...prev,
+        [id]: (prev[id]?prev[id]+1:2)
+      }))
+    }
+  
+    function decrease(id) {
+      setQuantities(prev => ({
+        ...prev,
+        [id]: Math.max((prev[id] || 0) - 1, 1)
+      }))
+    }
 
     return(
       <>
-      <MyContext.Provider value={{cart,setCart}}>
+      <MyContext.Provider value={{cart,setCart,quantities,setQuantities,increase,decrease}}>
        
     <BrowserRouter>
      <Routes>

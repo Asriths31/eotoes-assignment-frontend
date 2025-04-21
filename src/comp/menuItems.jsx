@@ -6,13 +6,15 @@ import cartImg from "../assets/images/images.png"
 import { Link } from "react-router-dom"
 import { MyContext } from "../App"
 import Categories from "./categories"
+import bg from "../assets/images/eatoesBackground.png"
+import bg1 from "../assets/images/enhanced_background_texture_with_grain.png"
  function MenuItems(){
-   const{cart,setCart}=React.useContext(MyContext)
+   const{cart,setCart,quantities,increase,decrease}=React.useContext(MyContext)
    const[color,setColor]=React.useState(2)
-
    const[data,setData]=React.useState()
    const[alert,setAlert]=React.useState(false)
-    console.log(data)
+
+    // console.log(data)
     function handleClick(id){
           let selected=data.find(item=>item.id===id)
           setCart(prev=>[...prev,selected])
@@ -27,8 +29,14 @@ import Categories from "./categories"
     React.useEffect(()=>{
          axios.get("https://eatoes-assignment-backend.onrender.com/")
          .then((dat)=>setData(dat.data))
+         const img=new Image()
+         img.src=bg
+         img.src=bg1
         
     },[])
+
+     
+    console.log(Object.keys(quantities))
     if(data===undefined||data.length===0) return <h3>Lodingggg!!</h3>
     return(
         <>
@@ -53,6 +61,12 @@ import Categories from "./categories"
     
                 </div>
                 <div className="item-btn">
+                    <div className="quantity-info">
+                    <button onClick={()=>{decrease(foodData.id)}} id="quantity-btn"><span>-</span></button>
+                        <p>{Object.keys(quantities).includes(foodData.id)?quantities[foodData.id]:1}</p>
+                        <button onClick={()=>{increase(foodData.id)}} id="quantity-btn"><span>+</span></button>
+
+                    </div>
                     <button onClick={()=>{handleClick(foodData.id)}}>Add to Cart</button>
     
                 </div>

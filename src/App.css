@@ -59,8 +59,8 @@ body{
   flex-wrap: wrap;
 }
 .item-card{
-  height: auto;
-  width: 20vw;
+  height: 260px;
+  width: 25vw;
   background-color: #f3f2ee;
   background: url(./assets/images/enhanced_background_texture_with_grain.png);
   color: rgb(0, 0, 0);
@@ -68,8 +68,9 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 0px;
+  padding: 0px 0px 10px 0;
   border-radius: 10px;
+  margin-top: 30px;
   
 }
 .item-card:hover{
@@ -77,7 +78,7 @@ body{
   background-position: center;
 }
 .item-det{
-  height: 90%;
+  /* height: 0%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -87,8 +88,8 @@ body{
 }
 .item-det img{
   border-radius: 10px;
-  height: 24vh;
-  width: 15vw;
+  height: 25vh;
+  width: 25vw;
 }
 #item-name{
   font-size: larger;
@@ -103,12 +104,36 @@ body{
   /* color: white; */
   margin-top: 0px;
   margin-bottom: -3px;
+  overflow: visible;
 }
 .item-btn{
-  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* height: 30%; */
   width: 20vw;
   /* background-color: aqua; */
 }
+.quantity-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin:0 auto 20px 0; */
+}
+.quantity-info p{
+  font-weight: bold;
+  font-size: large  ;
+  margin:0 10px 10px 10px;
+      
+}
+#quantity-btn{
+  border-radius: 50%;
+  font-size: large;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  
+} 
 
 .item-btn button{
   display: block;
@@ -118,6 +143,7 @@ body{
   background-color: rgb(255, 255, 255);
   border: none;
   font-weight: 700;
+  margin-bottom: 10px;
 }
 .item-btn button:hover{
     background-color: rgb(31, 28, 28);
@@ -125,11 +151,11 @@ body{
     
 }
 .item-det p{
-  width: 19vw;
+  width: 24vw;
   /* background-color: aqua; */
   /* display: block; */
   overflow: hidden;
- margin-top: -20px;
+ margin-top: -26px; 
   text-overflow: ellipsis;
   text-wrap:nowrap;
   font-size: smaller;
@@ -158,14 +184,31 @@ body{
   justify-content: space-around;
   align-items: start;
   width: 100%;
-  height: 70px;
+  height: 90px;
   border-bottom:2px solid rgb(255, 0, 0) ;
 }
 .cart-items img{
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   margin-top: 10px;
   border-radius: 10px;
+}
+.cart-des{
+  width:40vw ;
+}
+.delete-btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: black; */
+  height: 100%;
+  margin-top: -20px;
+}
+.delete-btn img{
+  height: 20px;
+  width: 20px;
+  margin-top: -30px;
 }
 .cart-items div h3{
   margin: 10px 0 -20px 0;
@@ -202,6 +245,34 @@ body{
   background: none;
   border: none;
 }
+
+.quantity-cart{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     /* justify-content: center; */
+     height: 80px;
+     width: 100px;
+     margin-top: -8px;
+     /* background-color: black; */
+}
+.quantity-cart div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -7px;
+  width: 80px;
+
+}
+.quantity-cart button{
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  border: 1px solid orange;
+  text-align: center;
+
+}
+
 /* order */
 
 form{
@@ -247,32 +318,36 @@ form label{
 }
 
 @media only screen and (max-width:500px) {
- 
+  .item-card{
+    height: 240px;
+    width: 70vw;
+    padding: 0 6vw;
+  }
+
   .item-det img{
     height: 26vh;
-    width: 34vw;
+    width: 82vw;
   }
   .item-det p{
-    width: 45vw;
-    margin-top: 0px;
+    width: 79vw;
+    margin-top: -20px;
     padding-left: 15px;
 
     
   }
   #item-name{
-    margin-top: 10px;
+    margin-top: 0px;
     font-size: medium;
   }
   #item-price{
-    margin-top: 10px;
+    margin-top: 0px;
   }
   .item-btn{
-width: 30vw;
+   width: 70vw;
+   margin-bottom: 20px;
 
   }
-  .item-card{
-    width: 47vw;
-  }
+ 
   .alert-msg{
     
     margin: 0 auto;
@@ -280,18 +355,22 @@ width: 30vw;
     height: 60px;
     left: 20vw;
   }
+   
   /* cart */
 .cart-card{
   font-size: small;
   width: 80vw;
 }
+.cart-items{
+  height: 100px;
+}
 .cart-items img{
   margin: 10px;
 }
 .cart-items div{
-  overflow: scroll;
+  overflow: hidden;
   text-overflow: ellipsis;
-  height: 70px;
+  height: 100px;
 
 }
 .cart-items div p{
@@ -310,7 +389,10 @@ width: 30vw;
 .total-amt div h2{
   margin-left: 4px;
 }
-
+.delete-btn img{
+   margin: -30px 0 0 0;
+ 
+}
 /* order */
 form{
   width: 80vw;

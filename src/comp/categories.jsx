@@ -5,7 +5,7 @@ import React from "react"
 function Categories(props){
   
       function handleClick(e){
-        console.log("clicked",e.target.className==="appetite")
+        // console.log("clicked",e.target.className==="appetite")
         props.setData([])
         axios.get(`https://eatoes-assignment-backend.onrender.com/${e.target.className}`)
         .then((dat)=>{props.setData(dat.data)
@@ -15,8 +15,6 @@ function Categories(props){
 
         
       }
-
-    console.log(props.color)
     return(
         <>
         <button onClick={(e)=>{handleClick(e);props.setColor(1)}} style={props.color===1?{backgroundColor:"rgb(248, 128, 72)",color:"white"}:{backgroundColor:"#eee8d0"}} className="appetite">Appetites</button>
