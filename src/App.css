@@ -288,17 +288,24 @@ width: 30vw;
 .cart-items img{
   margin: 10px;
 }
+.cart-items div{
+  overflow: scroll;
+  text-overflow: ellipsis;
+  height: 70px;
+
+}
 .cart-items div p{
   margin-top: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .total-amt{
-  width: 70vw;
+  width: 60vw;
   justify-content: space-between;
 }
 .total-amt div{
   margin-left: 0;
+
 }
 .total-amt div h2{
   margin-left: 4px;

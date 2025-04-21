@@ -8,6 +8,8 @@ import { MyContext } from "../App"
 import Categories from "./categories"
  function MenuItems(){
    const{cart,setCart}=React.useContext(MyContext)
+   const[color,setColor]=React.useState(2)
+
    const[data,setData]=React.useState()
    const[alert,setAlert]=React.useState(false)
     console.log(data)
@@ -38,7 +40,7 @@ import Categories from "./categories"
 
         </div>
         <div className="categories">
-            <Categories setData={setData}/>
+            <Categories setData={setData} color={color} setColor={setColor}/>
         </div>
         {data.map((foodData)=>{
             return(
